@@ -4,10 +4,16 @@ pipeline {
     parameters {
         string (name: 'NAME', defaultValue: 'World', description: 'The name to say hello to.')
     }
+
+    environment {
+        ENVIRONMENT = "Prod"
+    }
+
+
     stages {
         stage(Hello) {
             steps{
-                echo "Hello ${params.NAME}"
+                echo "Hello ${params.NAME}. You are in ${env.ENVIRONMENT} environment."
             }
         }
         stage(Stage2) {
