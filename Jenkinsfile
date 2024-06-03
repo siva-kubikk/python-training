@@ -4,7 +4,13 @@ pipeline {
         stage(Hello) {
             steps{
                 echo "Hello World"
-                sh 'python --version'
+                sh '''
+                 apt update
+                 apt install python3
+                 python3 --version
+                 apt install python3-pip
+
+                '''
             }
         }
     }
