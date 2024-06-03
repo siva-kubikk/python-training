@@ -24,6 +24,22 @@ pipeline {
                 '''
             }
         }
+
+        stage(Parallel){
+            parallel{
+                stage(Stage3) {
+                    steps{
+                        echo "Stage 3 parallel"
+                    }
+                }
+                stage(Stage4) {
+                    steps{
+                        echo "Stage 4 parallel"
+                    }
+                }
+
+            }
+        }
     }
 
     post {
