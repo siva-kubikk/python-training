@@ -3,13 +3,16 @@ pipeline {
     stages {
         stage(Hello) {
             steps{
-                echo "Hello World"
+                echo "Hello World - Step 1.\n"
+                echo "Step 2.\n"
+                echo "Step 3.\n"
+            }
+        }
+        stage(Stage2) {
+            steps{
                 sh '''
-                 sudo apt update
-                 sudo apt install python3
-                 python3 --version
-                 sudo apt install python3-pip
-
+                echo "Cat issue file"
+                cat /etc/issue
                 '''
             }
         }
