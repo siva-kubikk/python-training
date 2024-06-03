@@ -12,7 +12,7 @@ pipeline {
             steps{
                 sh '''
                 echo "Cat issue file"
-                cat /etc/issue
+                cat /etc/issues
                 '''
             }
         }
