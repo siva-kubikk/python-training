@@ -7,16 +7,14 @@ pipeline {
     stages {
         stage(Hello) {
             steps{
-                echo "Hello World - Step 1.\n"
-                echo "Step 2.\n"
-                echo "Step 3.\n"
+                echo "Hello ${params.NAME}"
             }
         }
         stage(Stage2) {
             steps{
                 sh '''
                 echo "Cat issue file"
-                cat /etc/issues
+                cat /etc/issue
                 '''
             }
         }
