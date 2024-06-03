@@ -1,5 +1,9 @@
 pipeline {
     agent any
+
+    parameters {
+        string (name: 'NAME', defaultValue: 'World', description: 'The name to say hello to.')
+    }
     stages {
         stage(Hello) {
             steps{
