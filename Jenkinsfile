@@ -5,10 +5,10 @@ pipeline {
             steps{
                 echo "Hello World"
                 sh '''
-                 apt update
-                 apt install python3
+                 sudo apt update
+                 sudo apt install python3
                  python3 --version
-                 apt install python3-pip
+                 sudo apt install python3-pip
 
                 '''
             }
