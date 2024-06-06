@@ -19,6 +19,18 @@ pipeline {
                 echo "Hello ${params.NAME}. You are in ${env.LOCATION}"
             }
         }
+        stage('Display Parameters') {
+            steps {
+                script {
+                    echo "Greeting: ${params.GREETING}"
+                    echo "Debug Mode: ${params.DEBUG_MODE}"
+                    echo "Environment: ${params.ENVIRONMENT}"
+                    echo "DB Password: ${params.DB_PASSWORD}"
+                    echo "Config File: ${params.CONFIG_FILE}"
+                }
+            }
+        }
+
         stage("Parallel"){
             parallel{
                 stage('p1'){
