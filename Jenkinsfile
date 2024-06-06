@@ -1,9 +1,14 @@
 pipeline {
     agent any
 
-    parameters{
-        string(name: 'NAME', defaultValue: "World", description: "Input Name")
+    parameters {
+        string(name: 'GREETING', defaultValue: 'Hello', description: 'Greeting to use')
+        booleanParam(name: 'DEBUG_MODE', defaultValue: false, description: 'Enable debug mode')
+        choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'prod'], description: 'Deployment environment')
+        password(name: 'DB_PASSWORD', defaultValue: 'password', description: 'Database password')
+        file(name: 'CONFIG_FILE', description: 'Upload your configuration file')
     }
+
 
     environment{
         LOCATION = "Prod"
